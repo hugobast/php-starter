@@ -1,0 +1,21 @@
+#!/bin/bash
+# watchers
+
+coffee -wc -o ../assets/javascripts/ ../assets/javascripts/coffee/  >> /dev/null &
+COFFEE_PID=$!
+
+compass watch >> /dev/null &
+COMPASS_PID=$!
+
+echo ">>> Watchers is polling for changes. Press Ctrl-C to Stop."
+
+terminate() 
+{
+  kill -INT $COFFEE_PID
+  kill -INT $COMPASS_PID
+  exit $?
+}
+
+trap terminate SIGINT
+
+while true; do read stuff; done
