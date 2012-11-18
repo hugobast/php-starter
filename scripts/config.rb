@@ -1,7 +1,7 @@
 http_path = "/"
-css_dir = "../assets/stylesheets/"
-sass_dir = "../assets/stylesheets/scss"
-images_dir = "../assets/images"
+css_dir = "../public/stylesheets/"
+sass_dir = "../assets/scss"
+images_dir = "../public/images"
 javascripts_dir = "javascripts"
 
 # relative to the css file
